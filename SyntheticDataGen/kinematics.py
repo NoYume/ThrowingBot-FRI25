@@ -2,7 +2,7 @@ import sys
 import numpy as np
 
 EPSILON = np.finfo(float).eps
-GRAVITY = 9.8
+GRAVITY = 9.807
 # Testing Tolerance, error allowed
 TOLERANCE = 1e-6
 # Change Average Distance Once Determined (Gravity * Distance)
