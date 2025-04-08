@@ -1,4 +1,4 @@
-# Throwing Robot Arm Project - UT Austin ROBIN FRI
+# Throwing Robot Arm Project - UT Austin RobIn FRI
 
 ## I. INTRODUCTION
 
