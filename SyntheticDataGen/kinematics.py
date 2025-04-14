@@ -14,7 +14,7 @@ ROBOT_BASE_Y = 10
 
 
 def calculate_throw_parameters(delta_x, delta_y):
-    
+    """""Calculate the optimal throwing angle for a projectile to reach a target position"""
     # Calculate the optimal throwing angles using equation
     if abs(delta_y) < EPSILON:
         if (delta_x > 0):
@@ -37,6 +37,7 @@ def calculate_throw_parameters(delta_x, delta_y):
         
 
 def calculate_required_velocity(delta_x, delta_y, theta):
+    """Calculate the required velocity for the throw based on the constraint equation"""
     # Calculate denominator from constraint equation
     denominator = 2 * delta_x * np.sin(theta) * np.cos(theta) - 2 * delta_y * np.cos(theta)**2
         
@@ -54,12 +55,14 @@ def calculate_required_velocity(delta_x, delta_y, theta):
 
 
 def verify_constraint_equation(delta_x, delta_y, theta):
+    """Verify that the calculated theta satisfies the constraint equation"""
     # Verify the constraint equation
     leftSide = delta_x * np.cos(2 * theta) + delta_y * np.sin(2 * theta)
     return abs(leftSide) < TOLERANCE
 
 
 def calculate_robot_arm_parameters(target_x, target_y):
+    """Calculate all parameters needed for the robot arm throw."""
      # Convert target coordinates to delta values (relative to robot base)
     delta_x = target_x - ROBOT_BASE_X
     delta_y = target_y - ROBOT_BASE_Y
@@ -78,7 +81,7 @@ def calculate_robot_arm_parameters(target_x, target_y):
     jointAngles  = inverse_kinematics_for_throwing(theta)
     
     # Calculate joint velocities needed to achieve throwing velocity
-    jointVelocities = calculate_joint_velocities(jointAngles, velocity, theta)
+    jointVelocities = calculate_joint_velocities(velocity)
     
     return{
         "throwingAngle": theta,
@@ -89,7 +92,16 @@ def calculate_robot_arm_parameters(target_x, target_y):
 
 
 def inverse_kinematics_for_throwing(theta):
-    return 0
+    """Convert throwing angel to robot orientation"""
+    roll = 0.0
+    pitch = theta
+    yaw = 0.0
+    
+    return [roll, pitch, yaw]
 
-def calculate_joint_velocities(jointAngles, velocity, theta):
-    return 0
+def calculate_joint_velocities(velocity):
+    """Convert throwing velocity to robot speed ratio"""
+    MAX_VELOCITY = 2.0
+    speed_ratio = min(velocity / MAX_VELOCITY, 1.0)
+    
+    return speed_ratio
