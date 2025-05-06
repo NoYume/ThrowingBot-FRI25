@@ -33,8 +33,7 @@ ability of throwing success across a sample data
 generated with inverse kinematic equations
 for the tennis ball
 
-– Learn from trial and error without explicit supervi-
-sion. The success will be awarded from the accuracy
+– Learn from trial and error without explicit supervision. The success will be awarded from the accuracy
 of throws, the distance of the thrown object, the
 proper arch-like projectile path, the speed to land
 on the target, and hitting the decided target

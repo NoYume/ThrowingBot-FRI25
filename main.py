@@ -1,4 +1,4 @@
-from SyntheticDataGen.kinematics import calculate_robot_arm_parameters
+from AttemptOne.SyntheticDataGen.kinematics import calculate_robot_arm_parameters
 
 def main():
     # Set up random (x,y) targets to test

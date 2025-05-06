@@ -9,14 +9,14 @@ class SawyerSimulationController:
         # Initialize ROS node
         rospy.init_node('sawyer_sim_controller')
         
-        # Initialize MoveIt! components
+        # Initialize MoveIt components
         self.robot = RobotCommander()
         self.group = MoveGroupCommander("right_arm")
         self.scene = PlanningSceneInterface()
         
         # Configure virtual table
-        self.table_height = 0.0  # Adjust based on your needs
-        self.table_dimensions = [0.8, 1.2, 0.01]  # x, y, thickness
+        self.table_height = 0.0  
+        self.table_dimensions = [0.8, 1.2, 0.01] 
         
         # Add virtual table to planning scene
         self.add_virtual_table()
