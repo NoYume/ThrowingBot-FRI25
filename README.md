@@ -28,8 +28,7 @@ parameters using a kinematic equations, if given
 target (x,y), calculate throwing angle, velocity, and
 joint angle
 
-– Use a multi-layer neural network to predict the prob-
-ability of throwing success across a sample data
+– Use a multi-layer neural network to predict the probability of throwing success across a sample data
 generated with inverse kinematic equations
 for the tennis ball
 
@@ -40,8 +39,7 @@ on the target, and hitting the decided target
 
 – The network will also learn from physics-based
 predictions to compensate for unmodeled dynamics.
-This will combine analytical models and deep learn-
-ing to improve throwing accuracy
+This will combine analytical models and deep learning to improve throwing accuracy
 
 – Once satisfied, move to the physical robot and test
 out how close it performs to the simulation and
